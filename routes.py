@@ -48,7 +48,8 @@ def cadastro():
 #falta implementar a visualização dos funcionarios
 @app.route('/exibir', methods=['GET', 'POST'])
 def exibir():
-    return render_template('exibir.html')
+    FuncionarioData = User.query.all()
+    return render_template('exibir.html', FuncionarioData=FuncionarioData)
 
 
 

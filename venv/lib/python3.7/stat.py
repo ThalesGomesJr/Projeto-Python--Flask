@@ -1,1 +1,1 @@
-/home/thalesgomesjr/anaconda3/lib/python3.7/stat.py
+/home/thalesjrgomes/anaconda3/lib/python3.7/stat.py

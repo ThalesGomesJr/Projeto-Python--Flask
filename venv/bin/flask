@@ -1,4 +1,4 @@
-#!/home/thalesgomesjr/Documentos/Projeto-Python--Flask/venv/bin/python
+#!/home/thalesjrgomes/Documentos/Projeto-Python--Flask/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

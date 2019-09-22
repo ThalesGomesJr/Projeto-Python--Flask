@@ -1,4 +1,4 @@
-#!/home/thalesgomesjr/Documentos/Projeto-Python--Flask/venv/bin/python
+#!/home/thalesjrgomes/Documentos/Projeto-Python--Flask/venv/bin/python
 
 import sys
 import getopt

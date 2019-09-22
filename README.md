@@ -1,6 +1,4 @@
-# Projeto-Python--Flask Versão 1.0.0
-Projeto de um sistema simples de cadastro de funcionarios - Com Python e a microframework Flask.
-- Desenvolvedor: Thales Junior de Souza Gomes
+# Projeto-Python--Flask Versão 2.0.0
+Projeto de um sistema simples de cadastro de funcionarios - Com Python, microframework Flask, HTML, Bootstrap e CSS.
 
-# Pendências no projeto
-- Falta implementar a visualização da lista de funcionarios cadastrados.
+- Desenvolvedor: Thales Junior de Souza Gomes
