@@ -1,10 +1,12 @@
 ||Ativar Anaconda-Python3.7: conda config --set auto_activate_base true||
 ||Desativar Anaconda-Python3.7: conda config --set auto_activate_base false||
+||Ativar Anaconda-Python3.7: conda activate||
+||Desativar Anaconda-Python3.7: conda deactivate||
 
-||Instalar pipenv: pip install pipenv||
-||Criar ambiente virtual: pipenv --three||
-||Verificar dependencias: pipenv run pip freeze||
-||Abrir ambiente virtual: pipenv shell||
+||Instalar virtualenv: pip install virtualenv||
+||Criar ambiente virtual: virtualenv venv||
+||Verificar dependencias: pip freeze||
+||Abrir ambiente virtual: source venv/bin/activate||
 
 ||Criar requirements: pip freeze > requirements.txt||
-||Instalar requirements: pipenv install -r requirements.txt||
+||Instalar requirements: pip install -r requirements.txt||
