@@ -40,14 +40,13 @@
     </nav>
     
     <br><br>   
-    <table class="table">
+    <table class="table mr-2">
         <thead>
         <tr>
             <th scope="col">Codigo de Registro</th>
             <th scope="col">Nome do Funcionário</th>
             <th scope="col">E-mail</th>
             <th scope="col">Telefone</th>
-            <th scope="col">Codigo de Registro</th>
             <th scope="col"></th>
         </tr>
         </thead>
@@ -57,8 +56,7 @@
             <th scope="row">{{ u.cod_registro }}</th>
             <td>{{u.name}}</td>
             <td>{{u.email}}</td>
-            <td>{{u.telefone}}</td>
-            <td><a href="/admin/edit/{{u.id}}">Editar</a></td>        
+            <td>{{u.telefone}}</td>     
         </tr>
         {% endfor %}
         
