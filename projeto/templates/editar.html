@@ -1,0 +1,24 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+    
+<div class="col-md-4 offset-md-4">        
+        <form action="/editar/{{FuncionarioData.id}}" method="post">
+            <br>
+            <h1>Formulario para editar funcionario</h1>
+            <label for="username" class="form-control-label text-center mt-3">Nome do Usuário</label>
+            <input class="form-control" name='name' id='username' type="input" value="{{FuncionarioData.name}}">
+            <label for="username" class="form-control-label text-center mt-3">Email</label>
+            <input class="form-control" name='email' id='username' type="input" value="{{FuncionarioData.email}}">
+            <label for="username" class="form-control-label text-center mt-3">Telefone</label>
+            <input class="form-control" name='telefone' id='username' type="input"  value="{{FuncionarioData.telefone}}">
+            <label for="username" class="form-control-label text-center mt-3">Codigo de Cadastro</label>
+            <input class="form-control" name='cod_registro' id='username' type="input"  value="{{FuncionarioData.cod_registro}}">
+            <br>
+            <button type="submit" class="btn btn-block btn-primary">Concluir Edição</button>
+            <a class="btn btn-block btn-warning" href="{{ url_for('exibir') }}">Voltar</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -20,11 +20,15 @@ def home():
         admin = Admin.query.filter_by(usuario=form.usuario.data).first()
         if admin and admin.senha == form.senha.data:
             login_user(admin)
+            flash('Login realizado com sucesso', 'success')
             return redirect(url_for("index"))
+        else:
+            flash('Login Invalido', 'danger')
+            return redirect(url_for("home"))
 
     return render_template('login.html', form=form)
 
-#incompleta
+#função pronta
 @app.route('/index', methods=['GET', 'POST'])
 def index():
     return render_template('home.html')
@@ -42,6 +46,7 @@ def cadastro():
         user = User(name, email, telefone, cod_registro)
         db.session.add(user)
         db.session.commit()
+        flash('Funcionario cadastrado com sucesso', 'success')
 
     return render_template('cadastro.html')
 
@@ -52,7 +57,37 @@ def exibir():
     return render_template('exibir.html', FuncionarioData=FuncionarioData)
 
 
+@app.route('/editar/<int:id>', methods=['GET', 'POST'])
+def editar(id):
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        telefone = request.form['telefone']
+        cod_registro = request.form['cod_registro']
+        FuncionarioData = User.query.get(int(id))
+        FuncionarioData.name = name
+        FuncionarioData.email = email
+        FuncionarioData.telefone = telefone
+        FuncionarioData.cod_registro = cod_registro
+        
+        db.session.add(FuncionarioData)
+        db.session.commit()
+        flash('Dados do funcionario foram atualizados com sucesso', 'success')
+        return redirect(url_for('exibir'))
+    
+    FuncionarioData = User.query.get(int(id))
+    return render_template('editar.html', FuncionarioData=FuncionarioData)
 
+
+
+@app.route('/delete/<int:id>', methods=['GET', 'POST'])
+def delete(id):
+    FuncionarioData = User.query.get(int(id))
+    db.session.delete(FuncionarioData)
+    db.session.commit()
+    flash('Funcionario removido com sucesso', 'success')
+    return redirect(url_for('exibir'))
+    
 #função pronta
 @app.route('/logout')
 def logout():
