@@ -50,13 +50,13 @@ def cadastro():
 
     return render_template('cadastro.html')
 
-#falta implementar a visualização dos funcionarios
+#função pronta
 @app.route('/exibir', methods=['GET', 'POST'])
 def exibir():
     FuncionarioData = User.query.all()
     return render_template('exibir.html', FuncionarioData=FuncionarioData)
 
-
+#função pronta
 @app.route('/editar/<int:id>', methods=['GET', 'POST'])
 def editar(id):
     if request.method == 'POST':
@@ -79,7 +79,7 @@ def editar(id):
     return render_template('editar.html', FuncionarioData=FuncionarioData)
 
 
-
+#função pronta
 @app.route('/delete/<int:id>', methods=['GET', 'POST'])
 def delete(id):
     FuncionarioData = User.query.get(int(id))
