@@ -7,13 +7,13 @@
             <br>
             <h1>Formulario para editar funcionario</h1>
             <label for="username" class="form-control-label text-center mt-3">Nome do Usuário</label>
-            <input class="form-control" name='name' id='username' type="input" value="{{FuncionarioData.name}}">
+            <input class="form-control" name='name' id='username' type="input" value="{{FuncionarioData.name}}" required name=name>
             <label for="username" class="form-control-label text-center mt-3">Email</label>
-            <input class="form-control" name='email' id='username' type="input" value="{{FuncionarioData.email}}">
+            <input class="form-control" name='email' id='username' type="input" value="{{FuncionarioData.email}}" required name=email>
             <label for="username" class="form-control-label text-center mt-3">Telefone</label>
-            <input class="form-control" name='telefone' id='username' type="input"  value="{{FuncionarioData.telefone}}">
+            <input class="form-control" name='telefone' id='username' type="input"  value="{{FuncionarioData.telefone}}" required name=telefone>
             <label for="username" class="form-control-label text-center mt-3">Codigo de Cadastro</label>
-            <input class="form-control" name='cod_registro' id='username' type="input"  value="{{FuncionarioData.cod_registro}}">
+            <input class="form-control" name='cod_registro' id='username' type="input"  value="{{FuncionarioData.cod_registro}}" required name=cod_registro>
             <br>
             <button type="submit" class="btn btn-block btn-primary">Concluir Edição</button>
             <a class="btn btn-block btn-warning" href="{{ url_for('exibir') }}">Voltar</a>

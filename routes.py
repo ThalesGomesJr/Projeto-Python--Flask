@@ -46,7 +46,7 @@ def cadastro():
         user = User(name, email, telefone, cod_registro)
         db.session.add(user)
         db.session.commit()
-        flash('Funcionario cadastrado com sucesso', 'success')
+        flash('Funcionario: {} foi cadastrado com sucesso'.format(name), 'success')
 
     return render_template('cadastro.html')
 
@@ -72,7 +72,7 @@ def editar(id):
         
         db.session.add(FuncionarioData)
         db.session.commit()
-        flash('Dados do funcionario foram atualizados com sucesso', 'success')
+        flash('Dados do funcionario: {} foram atualizados com sucesso'.format(FuncionarioData.name), 'success')
         return redirect(url_for('exibir'))
     
     FuncionarioData = User.query.get(int(id))
@@ -85,7 +85,7 @@ def delete(id):
     FuncionarioData = User.query.get(int(id))
     db.session.delete(FuncionarioData)
     db.session.commit()
-    flash('Funcionario removido com sucesso', 'success')
+    flash('Cadastro do funcionario: {} foi removido com sucesso'.format(FuncionarioData.name), 'success')
     return redirect(url_for('exibir'))
     
 #função pronta
